@@ -1,0 +1,52 @@
+
+
+<HTML>
+<HEAD>
+<TITLE>Sign In</TITLE>
+</HEAD>
+<BODY BGCOLOR="WHITE">
+
+<h3>Welcome to login!</h3><br>
+
+<FORM NAME="LoginPage" ACTION="/CSCI6810/DashBoard.jsp" METHOD ="post"> <!-- /CSCI6810/SignUp.jsp -->
+
+<table>
+<tr><td>Username:</td><td><INPUT TYPE="TEXT" NAME="UsernameField1" SIZE=20></td></tr>
+<tr><td>Password:</td><td><INPUT TYPE="PASSWORD" NAME="PasswordField1" SIZE=20></td></tr>
+
+</table>
+
+<P>
+
+<INPUT TYPE="BUTTON"  VALUE="Login" onClick="checkInputs()">
+</P>
+
+</FORM>
+</BODY>
+</HTML>
+
+<SCRIPT LANGUAGE="JavaScript">
+document.LoginPage.UsernameField1.focus();
+   function checkInputs()
+   {
+       var Prompts = "";
+       Username = window.document.LoginPage.UsernameField1.value;
+       Password = window.document.LoginPage.PasswordField1.value;;
+
+
+       if (Username == "" || Password == "") {
+          if (Username == "")
+             Prompts +="Please enter your username!\n";
+          if (Password == "")
+             Prompts +="Please enter your password!\n";
+
+          if (Prompts != "")
+             window.alert(Prompts);
+       }
+       else {
+
+          document.LoginPage.submit();
+       }
+   }
+
+</SCRIPT>
