@@ -1,0 +1,81 @@
+<!--
+/******************************************************************************
+*	Program Author: Dr. Yongming Tang for CSCI 6810 Java and the Internet	  *
+*	Date: September, 2012													  *
+*******************************************************************************/
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Sign Up</TITLE>
+</HEAD>
+<BODY  style ="Background-color:Beige";>
+
+<center><h3 style="font-size:300%;">Welcome to our online registration!</h3></center><br>
+
+
+
+
+
+
+
+<FORM NAME="SignUpPage" ACTION="/CSCI6810/SignUp.jsp" METHOD ="post"> <!-- /OnlineSignUpServlet -->
+
+<center><table cellspacing="3" cellpadding="3">
+<tr><td><center> Username:</td><td><INPUT TYPE="TEXT" NAME="UsernameField" SIZE=30></center></td></tr>
+<tr><td><center>Password:</td><td><INPUT TYPE="PASSWORD" NAME="PasswordField" SIZE=30></center></td></tr>
+<tr><td><center>Re-enter Password:</td><td><INPUT TYPE="PASSWORD" NAME="RePasswordField" SIZE=30></center></td></tr>
+<tr><td><center>Name:</td><td><INPUT TYPE="TEXT" NAME="NameField" SIZE=30></td></center></tr>
+
+<tr><td><center>Address:</td><td><INPUT TYPE="TEXT" NAME="AddressField" SIZE=30></center></td></tr>
+
+<tr><td><center>State:</td><td><INPUT TYPE="TEXT" NAME="StateField" SIZE=30></center></td></tr>
+
+<tr><td><center>City:</td><td><INPUT TYPE="TEXT" NAME="CityField" SIZE=30></center></td></tr>
+
+<tr><td><center>EzCode:</td><td><INPUT TYPE="TEXT" NAME="EzCode" SIZE=30></center></td></tr>
+<tr><td><center>Balance:</td><td><INPUT TYPE="TEXT" NAME="BalanceField" SIZE=30></center></td></tr>
+
+</table>
+</center>
+<P>
+<center><INPUT TYPE="BUTTON" VALUE="Register" onClick="checkInputs()"></center>
+<br>
+
+<center><INPUT TYPE="RESET" VALUE="Reset"></center>
+</P>
+<center><A HREF='/CSCI6810/SignIn.html'>I am already member</A></center>
+
+
+</FORM>
+</BODY>
+</HTML>
+
+<SCRIPT LANGUAGE="JavaScript">
+document.SignUpPage.UsernameField.focus();
+   function checkInputs()
+   {
+       var Prompts = "";
+       Username = window.document.SignUpPage.UsernameField.value;
+       Password = document.SignUpPage.PasswordField.value;
+       RePassword = SignUpPage.RePasswordField.value;
+       Name = SignUpPage.NameField.value;
+       if (Username == "" || Password == "" || RePassword == "" || Name == "") {
+          if (Username == "")
+             Prompts +="Please enter your username!\n";
+          if (Password == "")
+             Prompts +="Please enter your password!\n";
+          if (RePassword == "")
+             Prompts +="Please re-enter your password!\n";
+          if (Name == "")
+             Prompts +="Please enter your name!\n";
+          if (Prompts != "")
+             window.alert(Prompts);
+       } else if (RePassword != Password) {
+             window.alert("Your entered passwords are not same. Please enter the same one!");
+       }else {
+          document.SignUpPage.submit();
+       }
+   }
+
+</SCRIPT>

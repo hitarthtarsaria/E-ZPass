@@ -1,0 +1,54 @@
+
+
+<HTML>
+<HEAD>
+<TITLE>Sign In</TITLE>
+</HEAD>
+<BODY BGCOLOR="Beige">
+
+
+<center><h3  style="font-size:300%;" >Welcome to EzPass login!</h3><br></center>
+
+<FORM NAME="LoginPage" ACTION="/CSCI6810/DashBoard.jsp" METHOD ="post"> <!-- /CSCI6810/SignUp.jsp -->
+
+<center><table   cellspacing="10" cellpadding="3" >
+<tr><td> Username:</td><td><INPUT TYPE="TEXT" NAME="UsernameField1" SIZE=25></td></tr>
+<br>
+<tr><td>Password:</td><td><INPUT TYPE="PASSWORD" NAME="PasswordField1" SIZE=25></td></tr>
+
+</table>
+</center>
+<P>
+
+<center> <INPUT TYPE="BUTTON"  VALUE="Login" onClick="checkInputs()" style="height:30px;width:60px" > </center>
+</P>
+
+</FORM>
+</BODY>
+</HTML>
+
+<SCRIPT LANGUAGE="JavaScript">
+document.LoginPage.UsernameField1.focus();
+   function checkInputs()
+   {
+       var Prompts = "";
+       Username = window.document.LoginPage.UsernameField1.value;
+       Password = window.document.LoginPage.PasswordField1.value;;
+
+
+       if (Username == "" || Password == "") {
+          if (Username == "")
+             Prompts +="Please enter your username!\n";
+          if (Password == "")
+             Prompts +="Please enter your password!\n";
+
+          if (Prompts != "")
+             window.alert(Prompts);
+       }
+       else {
+
+          document.LoginPage.submit();
+       }
+   }
+
+</SCRIPT>
